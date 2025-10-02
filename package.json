@@ -12,6 +12,9 @@
     "start": "node app.js",
     "startdbg": "node --inspect-brk app.js"
   },
+  "dependencies": {
+    "netlify-cms-github-oauth-provider": "git+https://github.com/vencax/netlify-cms-github-oauth-provider.git"
+  },
   "keywords": [
     "netlify",
     "cms",
