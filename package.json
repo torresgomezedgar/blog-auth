@@ -1,13 +1,11 @@
 {
   "name": "decap-oauth-provider",
   "version": "1.0.0",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "netlify-cms-oauth-provider-node"
   },
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.19.2",
-    "netlify-cms-oauth-provider": "^1.0.4"
+    "netlify-cms-oauth-provider-node": "^1.0.1",
+    "dotenv": "^16.3.1"
   }
 }

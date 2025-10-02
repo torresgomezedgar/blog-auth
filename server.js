@@ -1,22 +1,21 @@
 require("dotenv").config();
 const express = require("express");
-const auth = require("netlify-cms-oauth-provider").default;
+const auth = require("netlify-cms-oauth-provider-node"); // 👈 importa todo el server
 
 const app = express();
 
-// Configuración del provider OAuth para GitHub
+// El paquete ya es un middleware de Express
 app.use(
+  "/auth",
   auth({
-    // estos vienen de GitHub OAuth App
     client_id: process.env.GITHUB_CLIENT_ID,
     client_secret: process.env.GITHUB_CLIENT_SECRET,
-    // Render expone puerto dinámico
-    port: process.env.PORT || 3000
+    repo: "torresgomezedgar/blog-decap",
+    branch: "main"
   })
 );
 
-// Render usa PORT, no 3000 fijo
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`OAuth server running on port ${PORT}`);
+  console.log(`✅ OAuth server running on http://localhost:${PORT}`);
 });
